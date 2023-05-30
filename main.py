@@ -63,13 +63,15 @@ while game_is_on:
   #Detech collision with wall.
   if snake.head.xcor() > 298 or snake.head.xcor() < -298 or snake.head.ycor(
   ) > 298 or snake.head.ycor() < -298:
-    game_is_on = False
-    scoreboard.game_over()
+
+    scoreboard.reset()
+    snake.reset()
 
   #Detech collision with tail
   for segment in snake.segments[1:]:
 
     #used distance method to detch the collison between head and other segments of snake body
     if snake.head.distance(segment) < 10:
-      game_is_on = False
-      scoreboard.game_over()
+
+      scoreboard.reset()
+      snake.reset()

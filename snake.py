@@ -24,7 +24,7 @@ class Snake:
     for pos in START_POS:
       self.add_segment(pos)
 
-  #This fuction will create a new segment
+    #This fuction will create a new segment
   def add_segment(self, pos):
       turt = Turtle("square")
       turt.color("white")
@@ -68,3 +68,10 @@ class Snake:
        
     self.head.forward(MOVE_DIST)
     
+
+  def reset(self):
+    for segment in self.segments:
+      segment.goto(2000,2000)
+    self.segments.clear()
+    self.create_snake()
+    self.head = self.segments[0]
